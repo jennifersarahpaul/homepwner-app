@@ -45,6 +45,15 @@ class ItemsViewController: UITableViewController {
         return cell
     }
     
+    // removes the correct item when the delete button is pressed
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let item = itemStore.allItems[indexPath.row]
+            itemStore.removeItem(item)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }
+    }
+    
     // moving the table to be below the time bar
     override func viewDidLoad() {
         super.viewDidLoad()
