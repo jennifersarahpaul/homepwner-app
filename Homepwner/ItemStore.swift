@@ -16,10 +16,4 @@ class ItemStore {
         allItems.append(newItem)
         return newItem
     }
-    
-    init() {
-        for _ in 0 ..< 5 {
-            createItem()
-        }
-    }
 }
