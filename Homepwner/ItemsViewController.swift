@@ -97,4 +97,9 @@ class ItemsViewController: UITableViewController {
             }
         }
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 }
