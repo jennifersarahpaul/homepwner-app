@@ -50,7 +50,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" id="HLU-MM-M2F" customClass="ItemCell" customModule="Homepwner" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" id="HLU-MM-M2F" customClass="ItemCell" customModule="Homepwner" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="600" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HLU-MM-M2F" id="ViX-sT-viA">
@@ -85,6 +85,11 @@
                                         <constraint firstItem="aNB-nZ-rcL" firstAttribute="top" secondItem="ViX-sT-viA" secondAttribute="topMargin" id="vN2-wO-dUA"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="aNB-nZ-rcL" id="VLQ-SX-fCc"/>
+                                    <outlet property="serialNumberLabel" destination="FQ0-YL-FPc" id="XLp-Fy-0B3"/>
+                                    <outlet property="valueLabel" destination="Brs-Ib-Q8I" id="0ZQ-Id-254"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
