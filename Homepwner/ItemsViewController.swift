@@ -20,7 +20,7 @@ class ItemsViewController: UITableViewController {
         }
     }
     
-    // toggles editing mode (edit button in header)
+    // button in header to toggle editing mode
     @IBAction func toggleEditingMode(sender: AnyObject) {
         if editing {
             sender.setTitle("Edit", forState: .Normal)
@@ -52,6 +52,11 @@ class ItemsViewController: UITableViewController {
             itemStore.removeItem(item)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
+    }
+    
+    // updates the store when items are moved (order changed)
+    override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        itemStore.moveItemAtIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
     
     // moving the table to be below the time bar
