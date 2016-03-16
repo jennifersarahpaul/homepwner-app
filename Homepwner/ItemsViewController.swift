@@ -11,6 +11,26 @@ import UIKit
 class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
     
+    // button in header to add a new row
+    @IBAction func addNewItem(sender: AnyObject) {
+        let newItem = itemStore.createItem()
+        if let index = itemStore.allItems.indexOf(newItem) {
+            let indexPath = NSIndexPath(forRow: index, inSection: 0)
+            tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }
+    }
+    
+    // toggles editing mode (edit button in header)
+    @IBAction func toggleEditingMode(sender: AnyObject) {
+        if editing {
+            sender.setTitle("Edit", forState: .Normal)
+            setEditing(false, animated: true)
+        } else {
+            sender.setTitle("Done", forState: .Normal)
+            setEditing(true, animated: true)
+        }
+    }
+    
     // creates the number of rows required
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemStore.allItems.count
