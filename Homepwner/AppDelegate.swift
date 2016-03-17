@@ -12,9 +12,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let itemStore = ItemStore()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        let itemStore = ItemStore()
         let imageStore = ImageStore()
         let navController = window!.rootViewController as! UINavigationController
         let itemsController = navController.topViewController as! ItemsViewController
@@ -27,6 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
+        let success = itemStore.saveChanges()
+        if (success) {
+            print("Saved all of the Items")
+        } else {
+            print("Could not save any of the Items")
+        }
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
