@@ -20,17 +20,6 @@ class ItemsViewController: UITableViewController {
         }
     }
     
-    // button in header to toggle editing mode
-    @IBAction func toggleEditingMode(sender: AnyObject) {
-        if editing {
-            sender.setTitle("Edit", forState: .Normal)
-            setEditing(false, animated: true)
-        } else {
-            sender.setTitle("Done", forState: .Normal)
-            setEditing(true, animated: true)
-        }
-    }
-    
     // creates the number of rows required
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemStore.allItems.count
@@ -79,10 +68,6 @@ class ItemsViewController: UITableViewController {
     // moving the table to be below the time bar
     override func viewDidLoad() {
         super.viewDidLoad()
-        let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 65
     }
@@ -101,5 +86,11 @@ class ItemsViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+    }
+    
+    // edit button on header
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder:aDecoder)
+        navigationItem.leftBarButtonItem = editButtonItem()
     }
 }

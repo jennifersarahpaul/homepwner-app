@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Items View Controller-->
+        <!--Homepwner-->
         <scene sceneID="TOL-Xx-2Ea">
             <objects>
                 <tableViewController id="c6K-0H-oVZ" customClass="ItemsViewController" customModule="Homepwner" customModuleProvider="target" sceneMemberID="viewController">
@@ -14,44 +14,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="nd9-NQ-oEt">
-                            <rect key="frame" x="0.0" y="64" width="600" height="60"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfV-RP-Bfq">
-                                    <rect key="frame" x="304" y="15" width="288" height="30"/>
-                                    <state key="normal" title="Add"/>
-                                    <connections>
-                                        <action selector="addNewItem:" destination="c6K-0H-oVZ" eventType="touchUpInside" id="vWD-Bi-6AS"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpa-HO-WtG">
-                                    <rect key="frame" x="8" y="15" width="288" height="30"/>
-                                    <state key="normal" title="Edit"/>
-                                    <connections>
-                                        <action selector="toggleEditingMode:" destination="c6K-0H-oVZ" eventType="touchUpInside" id="KbN-n4-mmu"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="zpa-HO-WtG" firstAttribute="leading" secondItem="nd9-NQ-oEt" secondAttribute="leading" constant="8" id="3GF-im-YSO"/>
-                                <constraint firstItem="mfV-RP-Bfq" firstAttribute="centerY" secondItem="nd9-NQ-oEt" secondAttribute="centerY" id="9KR-Xz-OXM"/>
-                                <constraint firstItem="mfV-RP-Bfq" firstAttribute="width" secondItem="zpa-HO-WtG" secondAttribute="width" id="DdS-SJ-Eif"/>
-                                <constraint firstItem="mfV-RP-Bfq" firstAttribute="leading" secondItem="zpa-HO-WtG" secondAttribute="trailing" constant="8" id="Oee-OP-Pxr"/>
-                                <constraint firstItem="zpa-HO-WtG" firstAttribute="leading" secondItem="nd9-NQ-oEt" secondAttribute="leading" constant="8" id="Oxd-fP-ORD"/>
-                                <constraint firstAttribute="trailing" secondItem="mfV-RP-Bfq" secondAttribute="trailing" constant="8" id="Stc-8p-Dpb"/>
-                                <constraint firstItem="zpa-HO-WtG" firstAttribute="centerY" secondItem="nd9-NQ-oEt" secondAttribute="centerY" id="hiL-9Y-2ea"/>
-                                <constraint firstItem="mfV-RP-Bfq" firstAttribute="centerY" secondItem="nd9-NQ-oEt" secondAttribute="centerY" id="o6H-rc-cZ8"/>
-                                <constraint firstItem="zpa-HO-WtG" firstAttribute="centerY" secondItem="nd9-NQ-oEt" secondAttribute="centerY" id="pgS-l6-iPB"/>
-                                <constraint firstItem="mfV-RP-Bfq" firstAttribute="width" secondItem="zpa-HO-WtG" secondAttribute="width" id="rPP-Ya-VBe"/>
-                                <constraint firstItem="mfV-RP-Bfq" firstAttribute="leading" secondItem="zpa-HO-WtG" secondAttribute="trailing" constant="8" id="uYT-IJ-r6L"/>
-                                <constraint firstAttribute="trailing" secondItem="mfV-RP-Bfq" secondAttribute="trailing" constant="8" id="vhW-Kq-cob"/>
-                            </constraints>
-                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" id="HLU-MM-M2F" customClass="ItemCell" customModule="Homepwner" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="152" width="600" height="65"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HLU-MM-M2F" id="ViX-sT-viA">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
@@ -99,7 +64,13 @@
                             <outlet property="delegate" destination="c6K-0H-oVZ" id="97h-G0-98q"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="PWT-DF-gUS"/>
+                    <navigationItem key="navigationItem" title="Homepwner" id="PWT-DF-gUS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="YyF-6o-FdM">
+                            <connections>
+                                <action selector="addNewItem:" destination="c6K-0H-oVZ" id="7mi-oZ-uSe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="icd-os-7AI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
